@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>開工！室內裝修乙級立體書</title>
+<meta name="description" content="一本會蓋房子的立體書：翻修四間房子，玩完就把建築物室內裝修工程管理乙級（12600）學科題庫與四科共同科目全部看過一遍。">
+<meta name="theme-color" content="#e9e1d3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Huninn&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<script src="vendor/gsap.min.js"></script>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.min.js"}}</script>
+</head>
+<body>
+<canvas id="c" tabindex="0" aria-label="立體書場景"></canvas>
+
+<div id="hud">
+  <div id="topL"><button class="iconBtn" id="tocBtn" title="回目錄" aria-label="回目錄"><svg viewBox="0 0 24 24"><path d="M4 5h6a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2H4z"/><path d="M20 5h-6a2 2 0 0 0-2 2v12a2 2 0 0 1 2-2h6z"/></svg></button><div class="chip" id="title"></div></div>
+  <div id="topR">
+    <button class="chip" id="ruleChip" title="工法手冊">工法 <b id="ruleN">0</b></button>
+    <button class="iconBtn" id="soundBtn" title="聲音" aria-label="聲音開關"><svg viewBox="0 0 24 24"><path d="M4 10v4h3l5 4V6L7 10z"/><g id="sndOn"><path d="M15.5 9.5a3.5 3.5 0 0 1 0 5"/><path d="M18 7a7 7 0 0 1 0 10"/></g><g id="sndOff" style="display:none"><path d="M16 9.5l5 5M21 9.5l-5 5"/></g></svg></button>
+  </div>
+</div>
+<div id="toast" role="status"></div>
+<div id="panel" aria-live="polite"></div>
+<canvas id="ghost" width="128" height="128" class="hidden"></canvas>
+
+<div id="start" class="overlay">
+  <div class="sheet intro">
+    <div class="kicker">建築物室內裝修工程管理乙級 · 12600</div>
+    <h1>開工！</h1>
+    <p class="lead">一本會蓋房子的立體書。接四個翻修案子：老公寓客廳、浴室、巷口咖啡店、新創辦公室。每一步都是考點，做錯會看到後果；勞檢員、審查人員、屋主會用題庫原題考你。</p>
+    <ul class="how">
+      <li><b>點</b>房間裡的東西、<b>拖</b>抽屜裡的材料進房間</li>
+      <li>拖曳空白處<b>轉視角</b>，兩指縮放</li>
+      <li>1,113 題全部分到四個案子裡，<b>題庫圖鑑</b>看收集進度</li>
+    </ul>
+    <button id="startBtn" class="btn primary big">翻開書本</button>
+    <p class="fine">題目與答案照技能檢定中心公告原文。共同科目用 115 年報檢適用的版本。</p>
+  </div>
+</div>
+<div id="sheet" class="overlay dim hidden"></div>
+<div id="loading" class="overlay"><div class="loader">翻找施工圖中…</div></div>
+<div id="err"><div><h2>這台裝置無法開啟 3D 畫面</h2><p>請換一個支援 WebGL 的瀏覽器再試試。</p></div></div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
